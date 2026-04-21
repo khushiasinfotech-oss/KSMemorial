@@ -409,7 +409,7 @@ header .social-nav li a:hover .fa {
 /* Logo Bar */
 header .logo-bar {
     padding: 10px 0;
-    background: url("../images/background/nav-bg.png") center;
+    background: url("https://res.cloudinary.com/doqruncrn/image/upload/v1776763884/Untitled_design_1_gwiloq.jpg") center;
     background-repeat: repeat;
     position: relative;
     height: 12vh;
@@ -1834,7 +1834,7 @@ section.contents .content-bar {
 
 /* page banner*/
 .banner-bar {
-    background: #666 url(../images/about/f8c171092effd56558c0d2dc1b4c0b13.jpg) no-repeat center;
+    background: #666 url(https://res.cloudinary.com/doqruncrn/image/upload/v1776764512/f8c171092effd56558c0d2dc1b4c0b13_plclr8.jpg) no-repeat center;
     padding: 30px 0 20px;
     background-size: cover;
     overflow: hidden;
