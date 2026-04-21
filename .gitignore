@@ -1,0 +1,12 @@
+# Ignore all images
+assets/images/
+
+# image formats
+*.jpg
+*.jpeg
+*.png
+*.webp
+
+# videos
+*.mp4
+*.mov

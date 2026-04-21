@@ -1,0 +1,54 @@
+.loader {
+	background: rgba(255,255,255,0.85);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 9999;
+	text-align:center;	
+	color: #999;
+}
+
+.loader .loader-msg {
+	position: fixed; 
+	width: 120px; 
+	padding: 15px 10px; 
+	top: 50%;
+	left: 50%;
+	margin-top: -60px;
+	margin-left: -60px; 
+}
+
+.loader .loader-msg .fa {
+	font-size: 25px;
+	color: #666;
+	display: block;
+	margin: 0 auto 5px;
+}
+
+.msg{
+	position:fixed;
+	bottom:25px;
+	right:30px; 
+	padding:8px 30px 8px 12px;
+	border-radius:4px;
+	color:#fff;
+	z-index: 99;
+}
+.msg.success{
+	background:green;
+}
+.msg.error{
+	background:red;
+}
+.msg a { 
+	padding: 0px 5px;
+	color: #fff!important;
+	font-size: 16px;
+	line-height: 0;
+	cursor: pointer; 
+	position: absolute;
+	right: 5px;
+	top: 50%;
+}

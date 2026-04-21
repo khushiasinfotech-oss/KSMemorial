@@ -1,0 +1,258 @@
+
+
+
+.level_1 {
+    list-style: none;
+    display: flex;
+}
+
+.level_1 li {
+   	display: block;
+    z-index: 999;
+    margin: 0;
+    position: relative;
+    float: left;
+}
+.level_1 li:before{
+	position: absolute;
+    content: "";
+    list-style-type: none;
+    
+    background-size: 20px 20px;
+    margin-right: 0px !important;
+    width: 20px;
+    height: 20px;
+	top:10px;
+	margin-right:5px;
+	left:-3px !important;
+}
+
+.level_1 li a {
+    font-size: 16px !important;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: #081212 !important;
+    font-weight: 750;
+    zoom: 1;
+    padding: 12px 12px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+header .logo-fixed-bar .level_1 li a {
+    color: #040505 !important;
+}
+
+.level_1>li>a::before {
+    content: '';
+    display: block;
+    border-radius: 0px;
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+    top: 0px;
+    bottom: 0px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-out;
+}
+
+.level_1 li a.has-nav {
+    position: relative;
+}
+
+.level_1 li a.has-nav::after {
+    font-family: 'FontAwesome';
+    color: #081212;
+    margin-left: 10px;
+    text-align: center;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+    content: "\f0d7    ";
+    font-weight: normal;
+}
+
+header .logo-fixed-bar .level_1 li a.has-nav::after {
+    color: #040505;
+}
+
+.level_1 li a:hover:before,
+.level_1 li a.active:before,
+.level_1 li a.nav-active:before {
+    left: 0%;
+    right: 0%;
+    /* background: #c72528; */
+}
+
+.level_1 li a:hover,
+.level_1 li a.active,
+.level_1 li a.nav-active,
+.level_1 li a:hover:after,
+.level_1 li a.active:after,
+.level_1 li a.nav-active:after {
+    color: var(--secondary-color) !important;
+    font-weight: 800;
+}
+
+header .logo-fixed-bar .level_1 li a:hover {
+       color: var(--secondary-color) !important;
+}
+
+header .logo-fixed-bar .level_1 li a:hover:after {
+      color: var(--secondary-color) !important;
+}
+
+header .logo-fixed-bar .level_1 li a.active {
+       color: #eb1f29 !important;
+}
+
+header .logo-fixed-bar .level_1 li a.active:after {
+       color: #eb1f29 !important;
+}
+
+/*********************************************************************************
+level 2 start
+***************/
+.level_1 .level_2 {
+    position: absolute;
+    z-index: 1;
+    top: 53px;
+    display: block;
+    max-height: 0px;
+    max-width: 0px;
+    opacity: 0;
+    overflow: hidden;
+    border-radius: 0px;
+    webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: perspective(600px) rotateY(40deg);
+    -moz-transform: perspective(600px) rotateY(40deg);
+    -ms-transform: perspective(600px) rotateY(40deg);
+    -o-transform: perspective(600px) rotateY(40deg);
+    transform: perspective(600px) rotateY(40deg);
+    -webkit-transition: -webkit-transform 0.5s ease, opacity 0.6s ease, max-height 0.6s step-end, max-width 0.6s step-end, padding 0.6s step-end;
+    -o-transition: -o-transform 0.5s ease, opacity 0.6s ease, max-height 0.6s step-end, max-width 0.6s step-end, padding 0.6s step-end;
+    transition: transform 0.5s ease, opacity 0.6s ease, max-height 0.6s step-end, max-width 0.6s step-end, padding 0.6s step-end;
+    -webkit-box-shadow: 0px 15px 28px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 15px 28px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 15px 28px rgba(0, 0, 0, 0.4);
+}
+
+.level_1 .level_2 li {
+    width: 220px;
+    float: none;
+    text-align: left;
+    position: relative;
+    white-space: nowrap;
+    margin: 0px !important;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+.level_1 .level_2 a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 0px;
+    background: rgba(255, 255, 255);
+	color: rgb(32, 28, 28) !important;
+    text-transform: inherit;
+    padding: 10px 8px !important;
+    font-size: 13px;
+}
+
+.level_1 .level_2 li:first-child a {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.level_1 .level_2 li:last-child a {
+    border: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.level_1 .level_2 li a:hover {
+    /* background: linear-gradient(to right, #046da2 0%, #04afae 100%); */
+	background: var(--primary-color);
+    /* background: linear-gradient(to right, #00933f 0%, #03d75f 100%); */
+    color: #fff !important;
+}
+
+.level_1 .level_2 li a:hover{
+	color:#fff !important;
+}
+
+/**********************************************************/
+.level_1 li:hover .level_2 {
+    overflow: visible;
+    max-height: 3000px;
+    max-width: 3000px;
+    opacity: 1;
+    -webkit-transform: perspective(600px) rotateX(0deg);
+    -moz-transform: perspective(600px) rotateX(0deg);
+    -ms-transform: perspective(600px) rotateX(0deg);
+    -o-transform: perspective(600px) rotateX(0deg);
+    ransform: perspective(600px) rotateX(0deg);
+    -webkit-transition: -webkit-transform 0.5s ease, opacity 0.2s ease, max-height 0s step-end, max-width 0s step-end, padding 0s step-end;
+    -o-transition: -o-transform 0.5s ease, opacity 0.2s ease, max-height 0s step-end, max-width 0s step-end, padding 0s step-end;
+    transition: transform 0.5s ease, opacity 0.2s ease, max-height 0s step-end, max-width 0s step-end, padding 0s step-end;
+}
+
+
+.level_1 li:hover .level_2 li {
+    width: 200px;
+    float: none;
+    text-align: left;
+    position: relative;
+}
+.level_1 li:hover .level_2 li:before{
+	display:none;
+}
+
+/**********************************************************/
+@media only screen and (min-width:320px) and (max-width:767px) {
+    .level_1 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:991px) {
+    .level_1 li a {
+        padding: 9px 10px;
+        font-size: 13px !important;
+    }
+	.level_1 li:before {
+		background-size: 12px 12px;
+		width: 13px;
+		height: 13px;
+		top: 9px;
+		margin-right: 5px;
+		left: -3px !important;
+	}
+}
+
+@media only screen and (min-width:992px) and (max-width:1169px) {
+    .level_1 li a {
+        padding: 5px 19px;
+        font-size: 14px !important;
+     }
+	 .level_1 li::before {
+			top: 4px;
+	  }
+}
