@@ -76,6 +76,10 @@
         href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap"
         rel="stylesheet">
 
+        <!-- AOS Animation -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body class="page-home">
@@ -375,8 +379,8 @@
         </div>
         <!-- Banner end -->
 
-        <section class=" gallery-page">
-            <div class="content-bar photo-gallery">
+        <section class=" gallery-page" >
+            <div class="content-bar photo-gallery" data-aos="fade-up" data-aos-delay="100">
                 <div class="container-fluid">
 
                     <div class="pinterest-gallery">
@@ -518,6 +522,16 @@
     <div id="footer"></div>
 
     <script src="assets/js/include.js"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {

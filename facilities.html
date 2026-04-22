@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/doqruncrn/image/upload/v1776763868/KS_Memorial_Banner_-_V15_pjntpk.png">
+    <link rel="icon" type="image/x-icon"
+        href="https://res.cloudinary.com/doqruncrn/image/upload/v1776763868/KS_Memorial_Banner_-_V15_pjntpk.png">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="language" content="EN">
@@ -68,6 +69,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap"
         rel="stylesheet">
+
+    <!-- AOS Animation -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -180,7 +185,8 @@
                 <div class="row">
                     <div class="col-xs-5 col-sm-2 col-md-2 col-lg-3 ipad-no">
                         <a href="index.html" class="logo">
-                            <img src="https://res.cloudinary.com/doqruncrn/image/upload/v1776763868/KS_Memorial_Banner_-_V15_pjntpk.png" alt="KS Memorial School">
+                            <img src="https://res.cloudinary.com/doqruncrn/image/upload/v1776763868/KS_Memorial_Banner_-_V15_pjntpk.png"
+                                alt="KS Memorial School">
                         </a>
                     </div>
 
@@ -360,7 +366,7 @@
         <!-- Banner end -->
 
         <!-- libraries section start -->
-        <section id="libraries" class="mt-60">
+        <section id="libraries" class="mt-60" data-aos="fade-up" data-aos-delay="100">
             <div class="container-fluid">
                 <div class="content-bar library">
                     <div style="position:relative">
@@ -423,7 +429,7 @@
         <!-- libraries section ends -->
 
         <!-- Labs section start -->
-        <section id="computer-lab" class="mt-60 computer-lab">
+        <section id="computer-lab" class="mt-60 computer-lab" data-aos="fade-up" data-aos-delay="100">
             <div class="container-fluid">
                 <div class="row content-bar computer-lab">
                     <div style="position:relative">
@@ -488,7 +494,7 @@
         <!-- Labs section ends -->
 
         <!-- Classes start -->
-        <section id="smart-class" class="smart-class-section">
+        <section id="smart-class" class="smart-class-section" data-aos="fade-up" data-aos-delay="100">
             <div class="container-fluid">
                 <div class="content-bar">
                     <div style="position:relative">
@@ -538,7 +544,7 @@
         <!-- Classes ends -->
 
         <!-- Transport start -->
-        <section id="transport" class="computer-lab mt-60">
+        <section id="transport" class="computer-lab mt-60" data-aos="fade-up" data-aos-delay="100">
             <div class="container-fluid">
                 <div class="content-bar library">
                     <div style="position:relative">
@@ -591,12 +597,21 @@
         </section>
         <!-- Transport end -->
     </section>
-    </section>
+    
 
     <div id="footer"></div>
 
     <script src="assets/js/include.js"></script>
 
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 
     <script>
         $(document).ready(function () {

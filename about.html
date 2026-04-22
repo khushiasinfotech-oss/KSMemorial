@@ -72,6 +72,9 @@
         href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap"
         rel="stylesheet">
 
+        <!-- AOS Animation -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -347,7 +350,6 @@
         </div>
 
         <!-- Banner start -->
-
         <div class="banner-bar">
             <div class="banner-content">
                 <div class="container">
@@ -365,7 +367,7 @@
         <!-- Banner end -->
 
         <!-- About section start -->
-        <section id="about-section">
+        <section id="about-section" data-aos="fade-up" data-aos-delay="200">
             <div class="container-fluid">
                 <div class="content-bar overview">
                     <div style="position:relative">
@@ -496,7 +498,7 @@
 
         <!-- Vision & Mission start -->
 
-        <section id="vision-mission" class="mt-60" style="background-color: var(--bg-light);">
+        <section id="vision-mission" class="mt-60" style="background-color: var(--bg-light);" data-aos="fade-up" data-aos-delay="200">
             <div class="container-fluid">
                 <div class="content-bar vision-and-mission">
                     <div style="position:relative">
@@ -547,6 +549,16 @@
 
     <script src="assets/js/include.js"></script>
 
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    
     <script>
         $(document).ready(function () {
 

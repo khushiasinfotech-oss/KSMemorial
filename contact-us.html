@@ -68,6 +68,10 @@
         href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap"
         rel="stylesheet">
 
+        <!-- AOS Animation -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body class="page-home">
@@ -358,8 +362,8 @@
         </div>
         <!-- Banner end -->
 
-        <div class="content-bar contact-us">
-            <div style="position:relative">
+        <div class="content-bar contact-us" >
+            <div style="position:relative" data-aos="fade-up" data-aos-delay="100">
                 <div class="container-fluid">
                     <div class="col-bar contact-us-bar">
                         <div class="contact-pg row">
@@ -455,8 +459,8 @@
             </div>
         </div>
 
-        <div class="section contact-details">
-            <div class="container-fluid">
+        <div class="section contact-details" >
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
                 <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
                     <div class="col-lg-12 cont-details-bg">
                         <div class="col col-desc">
@@ -569,8 +573,17 @@
 
     <div id="footer"></div>
 
-
     <script src="assets/js/include.js"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 
     <script>
         $(document).ready(function () {

@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/doqruncrn/image/upload/v1776763868/KS_Memorial_Banner_-_V15_pjntpk.png">
+    <link rel="icon" type="image/x-icon"
+        href="https://res.cloudinary.com/doqruncrn/image/upload/v1776763868/KS_Memorial_Banner_-_V15_pjntpk.png">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="language" content="EN">
@@ -71,6 +72,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap"
         rel="stylesheet">
+
+
+    <!-- AOS Animation -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -407,7 +413,7 @@
             </div>
         </section>
 
-        <div class="container-fluid leadership-section">
+        <div class="container-fluid leadership-section" data-aos="fade-up" data-aos-delay="200">
             <div class="row justify-content-center align-items-center director" style="gap: 4px;">
 
                 <!-- Director -->
@@ -541,8 +547,9 @@
             </div>
         </div> -->
         </div>
+
         <!-- home page starts -->
-        <div class="idx-activity-sec">
+        <div class="idx-activity-sec" data-aos="fade-up" data-aos-delay="200">
             <div class="container-fluid">
                 <div class="row g-3">
                     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -759,8 +766,8 @@
         </div>
 
         <!-- -->
-        <div class="idx-about-sec">
-            <div class="container-fluid">
+        <div class="idx-about-sec" >
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="200">
                 <div class="home-abt-outer">
                     <div class="row">
                         <div class=" col-lg-4 col-xs-12 col-sm-5">
@@ -815,8 +822,8 @@
             </div>
         </div>
 
-        <div class="col-bar home-gallery-bar">
-            <div class="container-fluid">
+        <div class="col-bar home-gallery-bar" >
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="200">
                 <div class="row g-2">
                     <div class="col-xs-12">
                         <h3 class="main-head" data-first="Photo Gallery">
@@ -919,7 +926,7 @@
                     All</a>
             </div>
         </div>
-        </div>
+        
 
         <!-- home page ends -->
     </section>
@@ -928,6 +935,15 @@
 
     <script src="assets/js/include.js"></script>
 
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 
 
     <script>

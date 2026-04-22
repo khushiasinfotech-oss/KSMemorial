@@ -69,6 +69,9 @@
         href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap"
         rel="stylesheet">
 
+        <!-- AOS Animation -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="page-home">
@@ -362,25 +365,25 @@
 
         <!-- Apply-online section start -->
 
-        <section id="about-section" class="mt-60" style="background-color: var(--bg-light);">
+        <section id="about-section" class="mt-60" style="background-color: var(--bg-light);" >
             <div class="container">
                 <h4>&nbsp;</h4>
 
-                <h4 style="color: var(--secondary-color);">
+                <h4 style="color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">
                     Documents required at the time of Admission (Self Attested):
                 </h4>
 
                 <ol>
-                    <li>Birth Certificate of the student</li>
-                    <li>Previous School Transfer Certificate (TC) (if applicable)</li>
-                    <li>Previous Class Report Card / Mark Sheet</li>
-                    <li>Aadhaar Card of Student</li>
-                    <li>Aadhaar Card of Parents/Guardian</li>
-                    <li>Passport Size Photographs of Student (Recent)</li>
-                    <li>Passport Size Photographs of Parents/Guardian</li>
-                    <li>Address Proof (Electricity Bill / Ration Card / Voter ID etc.)</li>
-                    <li>Caste Certificate (if applicable)</li>
-                    <li>Medical Certificate / Health Record (if applicable)</li>
+                    <li data-aos="fade-up" data-aos-delay="200">Birth Certificate of the student</li>
+                    <li data-aos="fade-up" data-aos-delay="300">Previous School Transfer Certificate (TC) (if applicable)</li>
+                    <li data-aos="fade-up" data-aos-delay="400">Previous Class Report Card / Mark Sheet</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Aadhaar Card of Student</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Aadhaar Card of Parents/Guardian</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Passport Size Photographs of Student (Recent)</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Passport Size Photographs of Parents/Guardian</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Address Proof (Electricity Bill / Ration Card / Voter ID etc.)</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Caste Certificate (if applicable)</li>
+                    <li data-aos="fade-up" data-aos-delay="500">Medical Certificate / Health Record (if applicable)</li>
 
                 </ol>
 
@@ -446,6 +449,16 @@
     <div id="footer"></div>
 
     <script src="assets/js/include.js"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 
     <script>
         $(document).ready(function () {
