@@ -91,12 +91,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Load Footer
 fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-      document.getElementById("footer").innerHTML = data;
-  });
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });
 
-  // ==============================
+// ==============================
 // RUN EVERYTHING AFTER PAGE LOAD
 // ==============================
 document.addEventListener("DOMContentLoaded", function () {
@@ -124,12 +124,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("click", function(e){
+document.addEventListener("click", function (e) {
 
     const menu = document.querySelector(".mobile-side-menu");
     const btn = document.querySelector(".btn_open");
 
-    if(!menu.contains(e.target) && !btn.contains(e.target)){
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
         menu.classList.remove("active");
     }
 
@@ -139,9 +139,9 @@ document.addEventListener("click", function(e){
 
 document.querySelectorAll(".has-submenu > a").forEach(item => {
 
-    item.addEventListener("click", function(e){
+    item.addEventListener("click", function (e) {
 
-        if(window.innerWidth < 992){
+        if (window.innerWidth < 992) {
             e.preventDefault();
             this.nextElementSibling.classList.toggle("show");
         }
@@ -152,37 +152,64 @@ document.querySelectorAll(".has-submenu > a").forEach(item => {
 
 
 
-        document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-            const videos = document.querySelectorAll(".gallery-video");
-            const images = document.querySelectorAll(".gallery-img");
+    const videos = document.querySelectorAll(".gallery-video");
+    const images = document.querySelectorAll(".gallery-img");
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
 
-                    // VIDEO PLAY / PAUSE
-                    if (entry.target.tagName === "VIDEO") {
-                        if (entry.isIntersecting) {
-                            entry.target.play();
-                        } else {
-                            entry.target.pause();
-                        }
-                    }
+            // VIDEO PLAY / PAUSE
+            if (entry.target.tagName === "VIDEO") {
+                if (entry.isIntersecting) {
+                    entry.target.play();
+                } else {
+                    entry.target.pause();
+                }
+            }
 
-                    // IMAGE ANIMATION
-                    if (entry.target.tagName === "IMG") {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("visible");
-                        }
-                    }
-
-                });
-            }, {
-                threshold: 0.5   // visible 50%
-            });
-
-            videos.forEach(video => observer.observe(video));
-            images.forEach(img => observer.observe(img));
+            // IMAGE ANIMATION
+            if (entry.target.tagName === "IMG") {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            }
 
         });
-    
+    }, {
+        threshold: 0.5   // visible 50%
+    });
+
+    videos.forEach(video => observer.observe(video));
+    images.forEach(img => observer.observe(img));
+
+});
+
+
+// lazy Load video
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const videos = document.querySelectorAll(".lazy-video");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                const video = entry.target;
+                const source = video.querySelector("source");
+
+                if (source.dataset.src) {
+                    source.src = source.dataset.src;
+                    video.load();
+                }
+
+                observer.unobserve(video);
+            }
+        });
+    });
+
+    videos.forEach(video => observer.observe(video));
+
+});
