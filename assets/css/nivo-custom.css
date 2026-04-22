@@ -79,8 +79,7 @@
     z-index: 1;
     overflow: hidden;
     line-height: 1;
-    /* background: linear-gradient(to right, #046da2 0%, #04afae 100%); */
-    background:var(--secondary-color);
+    background:var(--primary-color);
     border: none;
     border-radius: 5px;
     margin-top: 20px !important;
@@ -89,7 +88,7 @@
 .hero-slider-content a::before {
 	position: absolute;
     content: '';
-    background:var(--primary-color);
+    background:var(--secondary-color);
     height: 100%;
     width: 100%;
     border-radius: 5px;
