@@ -1,37 +1,4 @@
 
-
-// fetch("header.html")
-// .then(response => response.text())
-// .then(data => {
-//     document.getElementById("header").innerHTML = data;
-
-//     activateMenu(); 
-// });
-
-
-
-
-// // Active menu
-// function activateMenu() {
-
-//     const currentPage = window.location.pathname.split("/").pop();
-
-//     document.querySelectorAll(".level_1 li a").forEach(link => {
-
-//         if (link.getAttribute("href") === currentPage) {
-
-//             link.classList.add("active");
-
-//             const parentMenu = link.closest(".level_2");
-//             if (parentMenu) {
-//                 parentMenu.previousElementSibling.classList.add("active");
-//             }
-//         }
-//     });
-
-// }
-
-
 // ==============================
 // ACTIVE MENU
 // ==============================
@@ -57,9 +24,6 @@ function activateMenu() {
     });
 }
 
-
-
-
 // ==============================
 // SUBMENU TOGGLE (MOBILE)
 // ==============================
@@ -80,136 +44,95 @@ function initSubMenu() {
 
 }
 
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    activateMenu();   // ✅ activates menu on every page
-
-});
-
-
-
-// Load Footer
-fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("footer").innerHTML = data;
-    });
-
 // ==============================
 // RUN EVERYTHING AFTER PAGE LOAD
 // ==============================
 document.addEventListener("DOMContentLoaded", function () {
-
     activateMenu();
-    initMobileMenu();
     initSubMenu();
-    loadFooter();
 
-});
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
+    // Mobile Menu Toggle
     const openBtn = document.querySelector(".btn_open");
     const mobileMenu = document.querySelector(".mobile-side-menu");
-
-    openBtn.addEventListener("click", function () {
-        mobileMenu.classList.toggle("active");
-    });
-
-});
-
-
-
-document.addEventListener("click", function (e) {
-
-    const menu = document.querySelector(".mobile-side-menu");
-    const btn = document.querySelector(".btn_open");
-
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-        menu.classList.remove("active");
+    if (openBtn && mobileMenu) {
+        openBtn.addEventListener("click", function () {
+            mobileMenu.classList.toggle("active");
+        });
     }
 
-});
+    // Lazy Load Videos and Play/Pause on Scroll
+    const lazyVideos = document.querySelectorAll(".lazy-video, .gallery-video");
+    const lazyImages = document.querySelectorAll(".gallery-img, .img-thumbnail");
 
-
-
-document.querySelectorAll(".has-submenu > a").forEach(item => {
-
-    item.addEventListener("click", function (e) {
-
-        if (window.innerWidth < 992) {
-            e.preventDefault();
-            this.nextElementSibling.classList.toggle("show");
-        }
-
-    });
-
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const videos = document.querySelectorAll(".gallery-video");
-    const images = document.querySelectorAll(".gallery-img");
-
-    const observer = new IntersectionObserver((entries) => {
+    const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-
-            // VIDEO PLAY / PAUSE
-            if (entry.target.tagName === "VIDEO") {
-                if (entry.isIntersecting) {
-                    entry.target.play();
-                } else {
-                    entry.target.pause();
-                }
-            }
-
-            // IMAGE ANIMATION
-            if (entry.target.tagName === "IMG") {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                }
-            }
-
-        });
-    }, {
-        threshold: 0.5   // visible 50%
-    });
-
-    videos.forEach(video => observer.observe(video));
-    images.forEach(img => observer.observe(img));
-
-});
-
-
-// lazy Load video
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const videos = document.querySelectorAll(".lazy-video");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+            const video = entry.target;
 
             if (entry.isIntersecting) {
-                const video = entry.target;
-                const source = video.querySelector("source");
-
-                if (source.dataset.src) {
-                    source.src = source.dataset.src;
+                // Lazy load source
+                if (video.dataset.src && !video.src) {
+                    video.src = video.dataset.src;
                     video.load();
+                } else {
+                    const source = video.querySelector("source");
+                    if (source && source.dataset.src && !source.src) {
+                        source.src = source.dataset.src;
+                        video.load();
+                    }
                 }
-
-                observer.unobserve(video);
+                
+                // Play if it's a gallery video
+                if (video.classList.contains("gallery-video")) {
+                    video.play().catch(e => console.log("Video play interrupted or blocked:", e));
+                }
+            } else {
+                // Pause if it's a gallery video
+                if (video.classList.contains("gallery-video")) {
+                    video.pause();
+                }
             }
         });
+    }, {
+        threshold: 0.1 // Start loading/playing when 10% is visible
     });
 
-    videos.forEach(video => observer.observe(video));
+    lazyVideos.forEach(video => videoObserver.observe(video));
 
+    // Image Intersection (for animations if needed)
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                imageObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
 });
+
+// Load Footer
+document.addEventListener("DOMContentLoaded", function () {
+    const footerElement = document.getElementById("footer");
+    if (footerElement) {
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                footerElement.innerHTML = data;
+            })
+            .catch(err => console.error("Error loading footer:", err));
+    }
+});
+
+document.addEventListener("click", function (e) {
+    const menu = document.querySelector(".mobile-side-menu");
+    const btn = document.querySelector(".btn_open");
+    if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove("active");
+    }
+});
+
+
+// 
+
+
